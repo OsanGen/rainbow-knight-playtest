@@ -1,0 +1,211 @@
+{
+  "schema": "rainbow-g2-motion-v1",
+  "rootTranslation": false,
+  "clock": "authoritative travel and state clocks only",
+  "curves": {
+    "support": [
+      [
+        0,
+        0
+      ],
+      [
+        0.2,
+        0.48
+      ],
+      [
+        0.55,
+        1
+      ],
+      [
+        0.82,
+        0.55
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "weight": [
+      [
+        0,
+        -0.28
+      ],
+      [
+        0.16,
+        0.1
+      ],
+      [
+        0.35,
+        0.24
+      ],
+      [
+        0.55,
+        -0.13
+      ],
+      [
+        0.73,
+        -0.3
+      ],
+      [
+        1,
+        -0.28
+      ]
+    ],
+    "settle": [
+      [
+        0,
+        0
+      ],
+      [
+        0.15,
+        1
+      ],
+      [
+        0.4,
+        -0.28
+      ],
+      [
+        0.7,
+        0.09
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "turn": [
+      [
+        0,
+        0
+      ],
+      [
+        0.22,
+        0.75
+      ],
+      [
+        0.55,
+        1
+      ],
+      [
+        0.82,
+        0.38
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "hero": {
+    "hammer_rabbit": {
+      "stance": 0.72,
+      "stride": 0.12,
+      "weight": 0.015,
+      "secondaryLag": 0.16
+    },
+    "rabbit_glimpse": {
+      "stance": 0.6,
+      "stride": 0.18,
+      "weight": 0.008,
+      "secondaryLag": 0.09
+    },
+    "flank_drone": {
+      "stance": 0.66,
+      "stride": 0.14,
+      "weight": 0.01,
+      "secondaryLag": 0.13
+    },
+    "signal_echo": {
+      "stance": 0.7,
+      "stride": 0.125,
+      "weight": 0.011,
+      "secondaryLag": 0.14
+    },
+    "notification_swarm": {
+      "stance": 0.66,
+      "stride": 0.12,
+      "weight": 0.006,
+      "secondaryLag": 0.14
+    },
+    "chair_knight": {
+      "stance": 0.75,
+      "stride": 0.1,
+      "weight": 0.017,
+      "secondaryLag": 0.21
+    },
+    "apex_rabbit": {
+      "stance": 0.65,
+      "stride": 0.15,
+      "weight": 0.012,
+      "secondaryLag": 0.13
+    },
+    "evolution_rabbit": {
+      "stance": 0.73,
+      "stride": 0.11,
+      "weight": 0.016,
+      "secondaryLag": 0.2
+    },
+    "arc_turret": {
+      "stance": 0.71,
+      "stride": 0.11,
+      "weight": 0.01,
+      "secondaryLag": 0.15
+    },
+    "name_glitch_shade": {
+      "stance": 0.67,
+      "stride": 0.12,
+      "weight": 0.008,
+      "secondaryLag": 0.17
+    },
+    "speaker_wraith": {
+      "stance": 0.74,
+      "stride": 0.1,
+      "weight": 0.015,
+      "secondaryLag": 0.18
+    },
+    "loop_ghost": {
+      "stance": 0.67,
+      "stride": 0.12,
+      "weight": 0.006,
+      "secondaryLag": 0.16
+    },
+    "decay_mote": {
+      "stance": 0.62,
+      "stride": 0.14,
+      "weight": 0.005,
+      "secondaryLag": 0.09
+    },
+    "double": {
+      "stance": 0.7,
+      "stride": 0.12,
+      "weight": 0.01,
+      "secondaryLag": 0.14
+    },
+    "dual": {
+      "stance": 0.63,
+      "stride": 0.15,
+      "weight": 0.005,
+      "secondaryLag": 0.08
+    },
+    "cell_blob": {
+      "stance": 0.69,
+      "stride": 0.12,
+      "weight": 0.009,
+      "secondaryLag": 0.15
+    },
+    "reach_shadow": {
+      "stance": 0.72,
+      "stride": 0.1,
+      "weight": 0.008,
+      "secondaryLag": 0.2
+    },
+    "drift_hound": {
+      "stance": 0.64,
+      "stride": 0.16,
+      "weight": 0.011,
+      "secondaryLag": 0.12
+    }
+  },
+  "freeze": "hold complete pose through freeze and thaw gate",
+  "defeat": "existing confirmed-removal event and 1.2s cap"
+}

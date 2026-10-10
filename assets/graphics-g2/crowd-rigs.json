@@ -1,0 +1,93 @@
+{
+  "schema": "rainbow-g2-rigs-v1",
+  "stage": "full-roster-owner-qa-pending",
+  "units": "normalized canonical cylinder",
+  "rootTranslation": false,
+  "parts": {
+    "g2_shell": {
+      "vertices": 154,
+      "triangles": 292
+    },
+    "g2_limb": {
+      "vertices": 66,
+      "triangles": 128
+    },
+    "g2_extremity": {
+      "vertices": 94,
+      "triangles": 180
+    },
+    "g2_head": {
+      "vertices": 358,
+      "triangles": 644
+    },
+    "g2_jaw": {
+      "vertices": 122,
+      "triangles": 212
+    },
+    "g2_code_spine": {
+      "vertices": 34,
+      "triangles": 64
+    },
+    "g2_code_ribbon": {
+      "vertices": 18,
+      "triangles": 32
+    },
+    "g2_code_zero": {
+      "vertices": 24,
+      "triangles": 48
+    },
+    "g2_code_one": {
+      "vertices": 8,
+      "triangles": 12
+    }
+  },
+  "families": [
+    "biped",
+    "heavy",
+    "asymmetric"
+  ],
+  "jointHierarchy": {
+    "pelvis": "root",
+    "hipL": "pelvis",
+    "hipR": "pelvis",
+    "kneeL": "hipL",
+    "kneeR": "hipR",
+    "footL": "kneeL",
+    "footR": "kneeR",
+    "chest": "root",
+    "shoulderL": "chest",
+    "shoulderR": "chest",
+    "elbowL": "shoulderL",
+    "elbowR": "shoulderR",
+    "handL": "elbowL",
+    "handR": "elbowR",
+    "headJaw": "head"
+  },
+  "authoritativePoseMapping": "src/graphics-g2-rigs.ts; per-class normalized offsets and geometry scales",
+  "heroRoster": [
+    "hammer_rabbit",
+    "rabbit_glimpse",
+    "flank_drone"
+  ],
+  "remainingRoster": "OWNER_QA_PENDING",
+  "roster": [
+    "hammer_rabbit",
+    "rabbit_glimpse",
+    "flank_drone",
+    "signal_echo",
+    "notification_swarm",
+    "chair_knight",
+    "apex_rabbit",
+    "evolution_rabbit",
+    "arc_turret",
+    "name_glitch_shade",
+    "speaker_wraith",
+    "loop_ghost",
+    "decay_mote",
+    "double",
+    "dual",
+    "cell_blob",
+    "reach_shadow",
+    "drift_hound"
+  ]
+}
