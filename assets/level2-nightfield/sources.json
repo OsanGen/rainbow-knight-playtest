@@ -1,0 +1,58 @@
+{
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "archiveSha256": "0bab956a603c64fc6f63a66d3eca0317fb0d2a37f43d5aca429fbfbf102052da",
+  "files": [
+    {
+      "file": "brown_mud_diff_1k.jpg",
+      "bytes": 501955,
+      "sha256": "df3f135c899f10a3b018738343b222cbc67d13e7c76c5d8da834a3d34c984417",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud/brown_mud_diff_1k.jpg",
+      "source": "https://polyhaven.com/a/brown_mud",
+      "author": "Rob Tuytel",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "brown_mud_nor_gl_1k.jpg",
+      "bytes": 1011780,
+      "sha256": "ac517ca39eb507ae0f27e2b3db431c60888f9b5c3c52bec49d2c0775da0920cb",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud/brown_mud_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/brown_mud",
+      "author": "Rob Tuytel",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "brown_mud_rough_1k.jpg",
+      "bytes": 340815,
+      "sha256": "ae9fb57c1173ccb4579f40edf8321a30bdca815042ffd72015a2a707c7e2e7ba",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud/brown_mud_rough_1k.jpg",
+      "source": "https://polyhaven.com/a/brown_mud",
+      "author": "Rob Tuytel",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "rain.mp3",
+      "original": "2.mp3",
+      "archive": "rain.zip",
+      "source": "https://opengameart.org/content/rain-loopable",
+      "author": "Ylmir",
+      "license": "CC0-1.0",
+      "sha256": "5c67d3f347a990446e0027a1ceb990f0fbb4cf82f4cedca2b528c64a96ddab50",
+      "processing": "Original loopable MP3, unchanged.",
+      "durationSeconds": 26.0,
+      "bytes": 625684
+    },
+    {
+      "file": "thunder.mp3",
+      "original": "sfx100v2_thunder_01.ogg",
+      "archive": "thunder.zip",
+      "source": "https://opengameart.org/content/100-cc0-sfx-2",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "62c8395dd1b725ae46dc85fae48ca9b700e41a9f1b86aa0d7fe6f53b02ecc989",
+      "processing": "Converted to mono 44.1 kHz, 96 kbps MP3 for browser decoding.",
+      "durationSeconds": 5.264762,
+      "bytes": 63991
+    }
+  ]
+}
