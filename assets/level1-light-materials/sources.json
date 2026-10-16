@@ -1,0 +1,48 @@
+{
+  "provider": "Poly Haven",
+  "asset": "Interior Tiles",
+  "author": "Charlotte Baglioni",
+  "assetURL": "https://polyhaven.com/a/interior_tiles",
+  "metadataURL": "https://api.polyhaven.com/info/interior_tiles",
+  "fileAPI": "https://api.polyhaven.com/files/interior_tiles",
+  "license": "CC0-1.0",
+  "licenseURL": "https://polyhaven.com/license",
+  "acquiredAt": "2026-10-15T19:36:32.606Z",
+  "encodedTotalBytes": 1630239,
+  "decodedRGBAWithMipsEstimateBytes": 16777216,
+  "files": [
+    {
+      "file": "interior_tiles_diff_1k.jpg",
+      "bytes": 694562,
+      "md5": "94ba3714450bb6bbe6a57c9a26e8dac5",
+      "usage": "sRGB base color",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/interior_tiles/interior_tiles_diff_1k.jpg",
+      "sha256": "f267c4357e629f5ca2ab86f30da4fb0ae8c655a566cec6d81278df8d78dcca4a",
+      "width": 1024,
+      "height": 1024,
+      "decode": "PASS"
+    },
+    {
+      "file": "interior_tiles_nor_gl_1k.jpg",
+      "bytes": 414639,
+      "md5": "5c3a384bef2bbe4222803e7b40641609",
+      "usage": "OpenGL non-color normal",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/interior_tiles/interior_tiles_nor_gl_1k.jpg",
+      "sha256": "fdfb9fe192d438176508290fe873e181d88c5e6444a43bbab2ec156c9a78aa33",
+      "width": 1024,
+      "height": 1024,
+      "decode": "PASS"
+    },
+    {
+      "file": "interior_tiles_rough_1k.jpg",
+      "bytes": 521038,
+      "md5": "87e16e8aaeb2f1c1a3d9ed2e6da194ea",
+      "usage": "non-color roughness",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/interior_tiles/interior_tiles_rough_1k.jpg",
+      "sha256": "478b5cad03a064b9b25369223f8334d26c1bdc2cba08e3398c16234a4b2a1aaf",
+      "width": 1024,
+      "height": 1024,
+      "decode": "PASS"
+    }
+  ]
+}

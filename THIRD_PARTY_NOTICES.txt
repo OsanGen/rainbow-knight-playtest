@@ -111,3 +111,16 @@ Included Poly Haven sources, some optimized or adapted for this game:
 The G2 crowd/boss refinements and VT1 character/atrium are documented in
 project provenance records as original project-authored geometry and
 surface artwork, with no external assets in those authoring passes.
+
+
+LEVEL 1 LIGHT + MATERIALS v1.1
+# Level 1 Light + Materials assets
+
+Interior Tiles by Charlotte Baglioni, Poly Haven. CC0 1.0.
+https://polyhaven.com/a/interior_tiles
+https://polyhaven.com/license
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Only the three pinned 1K JPEG maps listed in sources.json are included. Encoded bytes, provider MD5, local SHA-256 and decoded dimensions are recorded there.
+
+Retained Metal Plate 02 maps by Rob Tuytel, Poly Haven, CC0 remain unchanged in ../pbr, with original provenance and notices preserved. No new metal image download.
