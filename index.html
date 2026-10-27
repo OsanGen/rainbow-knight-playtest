@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#030205"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23251932'/%3E%3Ctext x='20' y='30' text-anchor='middle' font-size='30' fill='%23efa9e0'%3E✳%3C/text%3E%3C/svg%3E"><title>Rainbow Knight · Two Worlds</title>
 <style>html,body{margin:0;background:#030205;color:#f9f4ed;font-family:Arial,sans-serif}#intro{position:fixed;inset:0;z-index:100;background:#030205;display:grid;place-items:center}#intro[hidden],[hidden]{display:none!important}.intro-card{text-align:center;font-size:clamp(30px,7vw,100px);line-height:1.05;margin:0;width:84%;font-weight:900}.intro-card span{display:block}.intro-prefix{font-size:.42em;letter-spacing:.05em;margin-bottom:.4em}.intro-controls{position:absolute;bottom:24px;left:24px;right:24px;display:flex;justify-content:space-between;gap:16px}.intro-controls button{min-height:46px;padding:12px 18px;color:#f9f4ed;background:#0a0710;border:1px solid #9989ab;font:600 10px monospace;letter-spacing:1.4px}.intro-controls button:focus-visible{outline:2px solid #a9f6d8;outline-offset:4px}#boot-status{padding:32px;font:14px monospace}#intro .intro-card{position:absolute;top:35%;left:8%;right:8%;width:auto;transform:translateY(-50%)}#intro #intro-credit{top:58%;font-size:clamp(16px,3vw,32px);letter-spacing:.06em}#intro #intro-credit .intro-prefix{font-size:.4em}#intro-enter{position:absolute;top:74%;left:50%;transform:translate(-50%,-50%);min-height:46px;padding:12px 18px;background:#0a0710;color:#f9f4ed;border:1px solid #9989ab;font:600 12px monospace}#intro-room-caption{position:absolute;bottom:88px;text-align:center;font:14px monospace}</style>
-  <script type="module" crossorigin src="./assets/index-E_ynnsxn.js"></script>
+  <script type="module" crossorigin src="./assets/index-DknQ0yWg.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-BEDLj1FX.css">
 </head><body><div id="app"><p id="boot-status" role="status">Preparing the game. If it does not load, reload this page.</p></div>
 <section id="intro" data-phase="title" aria-label="Game introduction" tabindex="-1">
@@ -17,15 +17,31 @@
 </section>
 <script>
 // The native shell is skippable before the game bundle or optional art is ready.
-(()=>{const shell=document.getElementById('intro'),query=new URLSearchParams(location.search),held=new Set();
+(()=>{const shell=document.getElementById('intro'),query=new URLSearchParams(location.search),held=new Set(),cancelled=new Set(),nativeButtons=new Map();
 const bypass=query.get('intro')==='off'||query.get('intro')!=='on'&&(query.get('proof')==='1'||query.get('practice')==='boss'||['48','64'].includes(query.get('fixture')));
 const skip=e=>{if(e){e.preventDefault();e.stopImmediatePropagation();}shell.dataset.skipRequested='true';document.getElementById('intro-room-caption').textContent='Preparing Level 1…';document.getElementById('intro-skip').disabled=true;};
 const enter=e=>{if(e){e.preventDefault();e.stopImmediatePropagation();}if(shell.dataset.enterRequested==='true'||shell.dataset.skipRequested==='true')return;shell.dataset.enterRequested='true';document.getElementById('intro-room-caption').textContent='Preparing the apartment…';document.getElementById('intro-enter').disabled=true;try{const context=window.__rainbowEntryAudioContext??=new AudioContext();void context.resume().catch(()=>{});}catch{/* Entry remains usable without audio. */}};
 const click=e=>{if(e.target.closest('#intro-skip'))skip(e);else if(e.target.closest('#intro-enter'))enter(e);};
 const sync=()=>{shell.dataset.heldKeys=[...held].join(',');};
-const key=e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.isComposing||e.code==='Tab')return;if(shell.hidden){if(held.has(e.code)){e.preventDefault();e.stopImmediatePropagation();}return;}held.add(e.code);sync();if(['Enter','Space'].includes(e.code)&&e.target.closest('#intro-skip,#intro-enter'))return;if(e.code==='Enter'&&!e.repeat){enter(e);return;}e.preventDefault();e.stopImmediatePropagation();};
-const up=e=>{if(held.delete(e.code)){sync();e.preventDefault();e.stopImmediatePropagation();}};
-const blur=()=>{held.clear();sync();};
+const key=e=>{
+ if(e.ctrlKey||e.metaKey||e.altKey||e.isComposing||e.code==='Tab')return;
+ if(e.code==='Escape')nativeButtons.clear();else if(!e.repeat)nativeButtons.delete(e.code);
+ if(shell.hidden){if(held.has(e.code)||cancelled.has(e.code)){e.preventDefault();e.stopImmediatePropagation();}return;}
+ const wasHeld=held.has(e.code);if(!e.repeat)cancelled.delete(e.code);held.add(e.code);sync();
+ const button=e.target.closest('#intro-skip,#intro-enter');
+ if(['Enter','Space'].includes(e.code)&&button){
+  // Preserve only a fresh native activation pair; repeats never become game input.
+  if(!e.repeat&&!wasHeld&&!button.disabled&&!button.hidden&&!button.closest('[hidden]')){nativeButtons.set(e.code,button);return;}
+ }else if(e.code==='Enter'&&!e.repeat&&!wasHeld){enter(e);return;}
+ e.preventDefault();e.stopImmediatePropagation();
+};
+const up=e=>{
+ const button=e.target.closest('#intro-skip,#intro-enter'),wasHeld=held.delete(e.code),wasCancelled=cancelled.delete(e.code);
+ const native=!shell.hidden&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.isComposing&&wasHeld&&button&&nativeButtons.get(e.code)===button&&!button.disabled&&!button.hidden&&!button.closest('[hidden]');
+ nativeButtons.delete(e.code);
+ if(wasHeld||wasCancelled){sync();if(!native){e.preventDefault();e.stopImmediatePropagation();}}
+};
+const blur=()=>{for(const code of held)cancelled.add(code);held.clear();nativeButtons.clear();sync();};
 shell.addEventListener('click',click);window.addEventListener('keydown',key,true);window.addEventListener('keyup',up,true);window.addEventListener('blur',blur);
 shell.addEventListener('intro:claimed',()=>{shell.removeEventListener('click',click);window.removeEventListener('keydown',key,true);window.removeEventListener('keyup',up,true);window.removeEventListener('blur',blur);},{once:true});
 if(bypass)skip();})();
